@@ -1,7 +1,11 @@
-import  { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk'; // Если используется асинхронная логика в экшенах
-import rootReducer from '../reducers';
+import rootReducer from '../reducers/rootReducer'
+import { configureStore } from '@reduxjs/toolkit';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware();
+    },
+});
 
 export default store;
