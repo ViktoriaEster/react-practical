@@ -1,17 +1,6 @@
 const initialState = {
-    posts: [{
-        id: 1,
-        title: 'Заголовок поста',
-        username: 'Имя пользователя',
-        likes: [/* массив имен пользователей, поставивших лайк */],
-        dislikes: [/* массив имен пользователей, поставивших дизлайк */],
-        imageSrc: 'https://example.com/path/to/image.jpg',
-        date: '2023-01-01',
-        comments: [
-            { id: 1, text: 'Комментарий 1', username: 'Пользователь1', date: '2023-01-02' },
-        ]
-    }],
-    // другие поля состояния, если нужны
+    posts: []
+    ,
 };
 
 const postReducer = (state = initialState, action) => {

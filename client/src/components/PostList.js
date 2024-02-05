@@ -31,6 +31,7 @@ const PostList = ({ userId, loggedInUser }) => {
         <div className="post-list">
             <div className="search-bar">
                 <span>"Hello"</span>
+                <label> User:</label>
                 <input
                     type="text"
                     value={keyword}
