@@ -1,14 +1,17 @@
 import React from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../actions/userActons';
 
-
 const Header = () => {
-    const history = useNavigate ();
+    const history = useNavigate();
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.auth.user);
+    // Получаем состояние auth из Redux store
+    const authState = useSelector(state => state.auth);
+
+    // Проверяем, существует ли свойство 'user' в authState
+    const user = authState && authState.user;
 
     const handleLogout = () => {
         dispatch(logout());
